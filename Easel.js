@@ -68,29 +68,40 @@ var Easel = (function() {
 
 		/**
 		 * Creates a bitmap
-		 * @param  {*} value the value-pair of the asset
-		 * @param  {String} key to search under
+		 * @param  {String} value the value-pair of the asset
+		 * @param  {Object} params to set on the bitmap after initialization
 		 * @return {c.Bitmap}  The bitmap
 		 */
 
-		createBitmap: function (value) {
-			return new c.Bitmap( Easel.returnAssetImage( value ));
+		createBitmap: function (name, params) {
+			var bitmap = new c.Bitmap( Easel.returnAssetImage( name ));
+
+			if (!_.isUndefined(params))
+				for (var param in params)
+					bitmap[param] = params[param]
+
+			return bitmap
 		},
 
 
 
 		/**
 		 * Creates a spritesheet and returns c.Sprite object
-		 * @param  {*} value the value-pair of the asset
-		 * @param  {String} key to search under
+		 * @param  {String} The name of the asset
+		 * @param  {String} Frame to go to
+		 * @param {Object} params to set on the sprite
 		 * @return {c.Sprite}  The animated spritesheet
 		 */
 
-		createSprite: function (value, gotoFrameName) {
-			var sprite = new c.Sprite( new c.SpriteSheet( Easel.returnAssetSpriteSheet( value )));
+		createSprite: function (name, gotoFrameName, params) {
+			var sprite = new c.Sprite( new c.SpriteSheet( Easel.returnAssetSpriteSheet( name )));
 
 			if (!_.isUndefined(gotoFrameName))
-				sprite.gotoAndStop(gotoFrameName)
+				sprite.gotoAndStop( gotoFrameName )
+
+			if (!_.isUndefined(params))
+				for (var param in params)
+					sprite[param] = params[param]
 
 			return sprite
 		},
