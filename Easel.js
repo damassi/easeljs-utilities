@@ -423,4 +423,4 @@ var Easel = (function() {
 
 }).call();
 
-module.exports = Easel
+module.exports = Easel;
