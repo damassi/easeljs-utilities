@@ -12,24 +12,24 @@
 
 module.exports = function( grunt ) {
 
-	grunt.initConfig({
+  grunt.initConfig({
 
 
     // + ---------------------------------------
 
 
-		'simplemocha': {
-			options: {
-  		  ui: 'bdd',
-  		  reporter: 'spec',
+    'simplemocha': {
+      options: {
+        ui: 'bdd',
+        reporter: 'spec',
         compilers: 'coffee:coffee-script',
         bail: true
-  		},
+      },
 
-		  all: {
+      all: {
         src: ['test/ranker_spec.coffee']
       }
-		},
+    },
 
 
     'watch': {
@@ -39,7 +39,7 @@ module.exports = function( grunt ) {
       }
     }
 
-	})
+  })
 
 
   // + ---------------------------------------
