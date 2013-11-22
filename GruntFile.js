@@ -1,9 +1,6 @@
 /**
  * Configuration file for Ranker table application
  *
- * @author  Christopher Pappas
- * @date    8.21.13
- *
  * Primary Tasks:
  *   test  :  Execute mocha tests
  *   dev    :  Development mode, file-watcher
