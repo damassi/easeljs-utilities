@@ -5,4 +5,8 @@ Common utilities which make working with EaselJS easier
 
 Documentation
 -------------
- - TODO
+- TODO
+
+Tests
+-----
+- TODO
